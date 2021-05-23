@@ -9,7 +9,8 @@
     'depends': ['product'],
     'data': [
         'security/ir.model.access.csv',
-        'views/patient_views.xml'
+        'views/patient_views.xml',
+        'data/patient_views.xml'
     ],
     'installable': True,
     'application': True

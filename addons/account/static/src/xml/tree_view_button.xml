@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template id="my_contacts_template" xml:space="preserve">
+          <t t-extend="KanbanView.buttons">
+            <t t-jquery="button" t-operation="after">
+                <button t-if="widget.modelName == 'res.partner'" class="btn btn-primary my-contacts-button"
+                        type="button">My Contacts</button>
+            </t>
+          </t>
+    </template>

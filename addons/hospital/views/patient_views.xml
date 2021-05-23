@@ -52,7 +52,7 @@
             <field name="name">my.patient.tree.view</field>
             <field name="model">my.patient</field>
             <field name="arch" type="xml">
-                <tree string="Pets" default_order="create_date desc">
+                <tree string="Patients" default_order="create_date desc">
                     <field name="name"/>
                     <field name="nickname"/>
                     <field name="age"/>
@@ -64,7 +64,7 @@
         </record>
 
         <record id="action_my_patient" model="ir.actions.act_window">
-            <field name="name">My Pet</field>
+            <field name="name">My Patient</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">my.patient</field>
             <!-- <field name="view_type">form</field> --> <!-- Odoo 13 has removed this field -->
