@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'Invoicing',
-    'version': '1.1',
+    'name' : 'Invoicing',
+    'version' : '1.1',
     'summary': 'Invoices & Payments',
     'sequence': 10,
     'description': """
@@ -14,9 +14,8 @@ You could use this simplified accounting in case you work with an (external) acc
     """,
     'category': 'Accounting/Accounting',
     'website': 'https://www.odoo.com/page/billing',
-    'images': ['images/accounts.jpeg', 'images/bank_statement.jpeg', 'images/cash_register.jpeg',
-               'images/chart_of_accounts.jpeg', 'images/customer_invoice.jpeg', 'images/journal_entries.jpeg'],
-    'depends': ['base_setup', 'product', 'analytic', 'portal', 'digest'],
+    'images' : ['images/accounts.jpeg','images/bank_statement.jpeg','images/cash_register.jpeg','images/chart_of_accounts.jpeg','images/customer_invoice.jpeg','images/journal_entries.jpeg'],
+    'depends' : ['base_setup', 'product', 'analytic', 'portal', 'digest'],
     'data': [
         'security/account_security.xml',
         'security/ir.model.access.csv',
@@ -77,8 +76,6 @@ You could use this simplified accounting in case you work with an (external) acc
         'views/account_menuitem.xml',
         'views/account_analytic_default_view.xml',
         'wizard/account_tour_upload_bill.xml',
-        # 'views/tree_view_asset.xml',
-        # 'views/my_contact_view.xml',
     ],
     'demo': [
         'demo/account_demo.xml',
@@ -91,7 +88,6 @@ You could use this simplified accounting in case you work with an (external) acc
         'static/src/xml/account_journal_activity.xml',
         'static/src/xml/grouped_view_widget.xml',
         'static/src/xml/tax_group.xml',
-        # 'static/src/xml/*.xml'
     ],
     'installable': True,
     'application': True,

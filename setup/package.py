@@ -53,7 +53,7 @@ def run_cmd(cmd, chdir=None, timeout=None):
     return subprocess.run(cmd, cwd=chdir, timeout=timeout)
 
 
-def _rpc_count_modules(addr='http://127.0.0.1', port=8069, dbname='mycompany'):
+def _rpc_count_modules(addr='http://127.0.0.1', port=5500, dbname='mycompany'):
     time.sleep(5)
     uid = xmlrpclib.ServerProxy('%s:%s/xmlrpc/2/common' % (addr, port)).authenticate(
         dbname, 'admin', 'admin', {}

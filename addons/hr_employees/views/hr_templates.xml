@@ -1,0 +1,12 @@
+<odoo>
+	<data>
+		<template id="assets_end" inherit_id="web.assets_backend">
+			<xpath expr="." position="inside">
+				<script type="text/javascript" src="/hr_employees/static/src/js/component.js">
+				</script>
+				<script src="/hr_employees/static/src/js/field_widget.js" type="text/javascript" />
+				<link href="/hr_employees/static/src/scss/field_widget.scss" rel="stylesheet" type="text/scss" />
+			</xpath>
+		</template>
+	</data>
+</odoo>

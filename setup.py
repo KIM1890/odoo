@@ -4,6 +4,7 @@
 from setuptools import find_packages, setup
 from os.path import join, dirname
 
+
 exec(open(join(dirname(__file__), 'odoo', 'release.py'), 'rb').read())  # Load release variables
 lib_name = 'odoo'
 

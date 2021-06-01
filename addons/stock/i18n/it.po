@@ -612,7 +612,7 @@ msgstr "<strong>Dove inviare i prodotti</strong>"
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.stock_warn_insufficient_qty_scrap_form_view
 msgid "? This may lead to inconsistencies in your inventory."
-msgstr ""
+msgstr "? Ciò potrebbe portare a incongruenze nel magazzino."
 
 #. module: stock
 #: code:addons/stock/models/stock_move_line.py:0
@@ -2812,7 +2812,7 @@ msgstr "Icona"
 #: model:ir.model.fields,help:stock.field_stock_picking__activity_exception_icon
 #: model:ir.model.fields,help:stock.field_stock_production_lot__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr "Icona per indicare una eccezione attività."
+msgstr "Icona per indicare un'attività eccezione."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_inventory__message_needaction
@@ -3137,7 +3137,7 @@ msgstr "Dominio non valido per operando sinistro %s"
 #: code:addons/stock/models/product.py:0
 #, python-format
 msgid "Invalid domain operator %s"
-msgstr "Dominio non valido per operatore %s"
+msgstr "Operatore %s non valido per il dominio"
 
 #. module: stock
 #: code:addons/stock/models/product.py:0
@@ -5431,7 +5431,7 @@ msgstr "Registra lotti, colli, ubicazione"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_procurement_group__stock_move_ids
 msgid "Related Stock Moves"
-msgstr "Movimenti di magazzino collegati"
+msgstr "Movimenti di magazzino correlati"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
@@ -5752,7 +5752,7 @@ msgstr "Regole utilizzate"
 #: model:ir.ui.menu,name:stock.menu_procurement_compute
 #: model_terms:ir.ui.view,arch_db:stock.view_procurement_compute_wizard
 msgid "Run Scheduler"
-msgstr "Esegui schedulatore"
+msgstr "Esegui pianificatore"
 
 #. module: stock
 #: model:ir.model,name:stock.model_stock_scheduler_compute
@@ -7021,8 +7021,8 @@ msgid ""
 "This user will be responsible of the next activities related to logistic "
 "operations for this product."
 msgstr ""
-"Questo utente sarà responsabile delle prossime attività relative alle "
-"operazioni logistiche per questo prodotto. "
+"L'utente sarà responsabile delle prossime attività relative alle operazioni "
+"di logistica per il prodotto."
 
 #. module: stock
 #: model:digest.tip,name:stock.digest_tip_stock_0
@@ -7275,7 +7275,7 @@ msgstr "Tipo di operazione"
 #: model:ir.model.fields,help:stock.field_stock_picking__activity_exception_decoration
 #: model:ir.model.fields,help:stock.field_stock_production_lot__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr "Tipo di eccezione attività sul record."
+msgstr "Tipo di attività eccezione sul record."
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_res_config_settings__module_delivery_ups
@@ -7648,12 +7648,12 @@ msgstr "Magazzini"
 #. module: stock
 #: model:ir.model,name:stock.model_stock_warn_insufficient_qty
 msgid "Warn Insufficient Quantity"
-msgstr "Avviso per quantità insufficiente"
+msgstr "Avviso quantità non sufficiente"
 
 #. module: stock
 #: model:ir.model,name:stock.model_stock_warn_insufficient_qty_scrap
 msgid "Warn Insufficient Scrap Quantity"
-msgstr "Avviso per quantità di scarti insufficiente"
+msgstr "Avviso quantità di scarti non sufficiente"
 
 #. module: stock
 #: code:addons/stock/models/stock_move.py:0

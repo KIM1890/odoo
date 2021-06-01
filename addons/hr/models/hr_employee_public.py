@@ -10,7 +10,7 @@ class HrEmployeePublic(models.Model):
     _description = 'Public Employee'
     _order = 'name'
     _auto = False
-    _log_access = True # Include magic fields
+    _log_access = True  # Include magic fields
 
     # Fields coming from hr.employee.base
     create_date = fields.Datetime(readonly=True)
@@ -32,15 +32,22 @@ class HrEmployeePublic(models.Model):
     color = fields.Integer(readonly=True)
 
     # hr.employee.public specific fields
-    child_ids = fields.One2many('hr.employee.public', 'parent_id', string='Direct subordinates', readonly=True)
-    image_1920 = fields.Image("Original Image", compute='_compute_image', compute_sudo=True)
-    image_1024 = fields.Image("Image 1024", compute='_compute_image', compute_sudo=True)
-    image_512 = fields.Image("Image 512", compute='_compute_image', compute_sudo=True)
-    image_256 = fields.Image("Image 256", compute='_compute_image', compute_sudo=True)
-    image_128 = fields.Image("Image 128", compute='_compute_image', compute_sudo=True)
+    child_ids = fields.One2many(
+        'hr.employee.public', 'parent_id', string='Direct subordinates', readonly=True)
+    image_1920 = fields.Image(
+        "Original Image", compute='_compute_image', compute_sudo=True)
+    image_1024 = fields.Image(
+        "Image 1024", compute='_compute_image', compute_sudo=True)
+    image_512 = fields.Image(
+        "Image 512", compute='_compute_image', compute_sudo=True)
+    image_256 = fields.Image(
+        "Image 256", compute='_compute_image', compute_sudo=True)
+    image_128 = fields.Image(
+        "Image 128", compute='_compute_image', compute_sudo=True)
     parent_id = fields.Many2one('hr.employee.public', 'Manager', readonly=True)
     coach_id = fields.Many2one('hr.employee.public', 'Coach', readonly=True)
-    user_partner_id = fields.Many2one(related='user_id.partner_id', related_sudo=False, string="User's partner")
+    user_partner_id = fields.Many2one(
+        related='user_id.partner_id', related_sudo=False, string="User's partner")
 
     def _compute_image(self):
         for employee in self:

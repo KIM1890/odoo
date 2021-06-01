@@ -345,6 +345,34 @@ class TestMrpOrder(TestMrpCommon):
         production.workorder_ids[0].button_start()
         self.assertEqual(production.workorder_ids.qty_producing, 5, "Wrong quantity is suggested to produce.")
 
+    def test_update_quantity_5(self):
+        bom = self.env['mrp.bom'].create({
+            'product_id': self.product_6.id,
+            'product_tmpl_id': self.product_6.product_tmpl_id.id,
+            'product_qty': 1,
+            'product_uom_id': self.product_6.uom_id.id,
+            'type': 'normal',
+            'bom_line_ids': [
+                (0, 0, {'product_id': self.product_2.id, 'product_qty': 3}),
+            ],
+        })
+        production_form = Form(self.env['mrp.production'])
+        production_form.product_id = self.product_6
+        production_form.bom_id = bom
+        production_form.product_qty = 1
+        production_form.product_uom_id = self.product_6.uom_id
+        production = production_form.save()
+        production.action_confirm()
+        production.action_assign()
+        production_form = Form(production)
+        # change the quantity producing and the initial demand
+        # in the same transaction
+        production_form.qty_producing = 10
+        with production_form.move_raw_ids.edit(0) as move:
+            move.product_uom_qty = 2
+        production = production_form.save()
+        production.button_mark_done()
+
     def test_update_plan_date(self):
         """Editing the scheduled date after planning the MO should unplan the MO, and adjust the date on the stock moves"""
         planned_date = datetime(2023, 5, 15, 9, 0)
@@ -1176,6 +1204,37 @@ class TestMrpOrder(TestMrpCommon):
         # remove the finished move from the available to be updated
         mo.move_finished_ids._action_done()
         mo.button_mark_done()
+
+    def test_product_produce_13(self):
+        """ Check that the production cannot be completed without any consumption."""
+        product = self.env['product.product'].create({
+            'name': 'Product no BoM',
+            'type': 'product',
+        })
+        mo_form = Form(self.env['mrp.production'])
+        mo_form.product_id = product
+        mo = mo_form.save()
+        move = self.env['stock.move'].create({
+            'name': 'mrp_move',
+            'product_id': self.product_2.id,
+            'product_uom': self.ref('uom.product_uom_unit'),
+            'production_id': mo.id,
+            'location_id': self.ref('stock.stock_location_stock'),
+            'location_dest_id': self.ref('stock.stock_location_output'),
+            'product_uom_qty': 0,
+            'quantity_done': 0,
+        })
+        mo.move_raw_ids |= move
+        mo.action_confirm()
+
+        mo.qty_producing = 1
+        # can't produce without any consumption (i.e. components w/ 0 consumed)
+        with self.assertRaises(UserError):
+            mo.button_mark_done()
+
+        mo.move_raw_ids.quantity_done = 1
+        mo.button_mark_done()
+        self.assertEqual(mo.state, 'done')
 
     def test_product_produce_uom(self):
         """ Produce a finished product tracked by serial number. Set another

@@ -21,7 +21,6 @@
 # Grzegorz Krukar <grzegorzgk1@gmail.com>, 2020
 # Martin Trigaux, 2020
 # Grażyna Grzelak <grazyna.grzelak@openglobe.pl>, 2020
-# Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2020
 # Mariusz, 2020
 # Zdzisław Krajewski <zdzichucb@gmail.com>, 2020
 # Piotr Szlązak <szlazakpiotr@gmail.com>, 2020
@@ -33,6 +32,7 @@
 # Maja Stawicka <mjstwck@wp.pl>, 2020
 # Maksym <ms@myodoo.pl>, 2020
 # Tomasz Leppich <t.leppich@gmail.com>, 2021
+# Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2021
 # Piotr Strębski <strebski@gmail.com>, 2021
 # 
 msgid ""
@@ -1488,7 +1488,7 @@ msgstr ""
 #: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "Decimal"
-msgstr ""
+msgstr "Dziesiętny"
 
 #. module: web
 #. openerp-web
@@ -2204,7 +2204,7 @@ msgstr ""
 #: code:addons/web/static/src/js/widgets/attach_document.js:0
 #, python-format
 msgid "Invalid fields:"
-msgstr ""
+msgstr "Nieprawidłowe pola:"
 
 #. module: web
 #: code:addons/web/controllers/main.py:0
@@ -2940,6 +2940,13 @@ msgstr "Tylko ty"
 #. openerp-web
 #: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
+msgid "Open Developer Tools"
+msgstr "Otwórz narzędzia deweloperskie"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
 msgid "Open Developer Tools#{widget.debug_mode_help}"
 msgstr ""
 
@@ -2988,6 +2995,13 @@ msgstr "Otwórz w widoku listy"
 #, python-format
 msgid "Open: "
 msgstr "Otwórz: "
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/views/list/list_renderer.js:0
+#, python-format
+msgid "Optional columns"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -3345,7 +3359,7 @@ msgstr "Szybkie dodawanie"
 #: code:addons/web/static/src/js/fields/relational_fields.js:0
 #, python-format
 msgid "Quick search: %s"
-msgstr ""
+msgstr "Szybkie wyszukiwanie: %s"
 
 #. module: web
 #: model:ir.model,name:web.model_ir_qweb_field_image
@@ -3440,7 +3454,7 @@ msgstr "Usuń zdjęcie główne"
 #: code:addons/web/static/src/js/widgets/data_export.js:0
 #, python-format
 msgid "Remove field"
-msgstr ""
+msgstr "Usuń pole"
 
 #. module: web
 #. openerp-web
@@ -4078,7 +4092,7 @@ msgstr "Ta domena nie jest obsługiwana."
 #: code:addons/web/static/src/xml/name_and_signature.xml:0
 #, python-format
 msgid "This file is invalid. Please select an image."
-msgstr ""
+msgstr "Ten plik jest nieprawidłowy. Proszę wybrać obraz."
 
 #. module: web
 #. openerp-web

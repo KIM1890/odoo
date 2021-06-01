@@ -131,7 +131,7 @@ class configmanager(object):
         group.add_option("--http-interface", dest="http_interface", my_default='',
                          help="Listen interface address for HTTP services. "
                               "Keep empty to listen on all interfaces (0.0.0.0)")
-        group.add_option("-p", "--http-port", dest="http_port", my_default=8069,
+        group.add_option("-p", "--http-port", dest="http_port", my_default=5500,
                          help="Listen port for the main HTTP service", type="int", metavar="PORT")
         group.add_option("--longpolling-port", dest="longpolling_port", my_default=8072,
                          help="Listen port for the longpolling HTTP service", type="int", metavar="PORT")

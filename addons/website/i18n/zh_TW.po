@@ -6573,7 +6573,7 @@ msgstr "登入"
 #: model:ir.model.fields.selection,name:website.selection__ir_ui_view__visibility__connected
 #, python-format
 msgid "Signed In"
-msgstr "簽入"
+msgstr "已登入"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.res_config_settings_view_form
@@ -8457,7 +8457,7 @@ msgstr "你可以在同一個網域建立 2 個網站，然後設定不同的國
 #: model:ir.model.constraint,message:website.constraint_res_users_login_key
 #, python-format
 msgid "You can not have two users with the same login!"
-msgstr "不能有兩個使用者用同樣的登入帳號！"
+msgstr "不能有兩個使用者同時登入！"
 
 #. module: website
 #: code:addons/website/models/website_snippet_filter.py:0
